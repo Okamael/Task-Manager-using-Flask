@@ -8,7 +8,6 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Instalar as dependêcias
-
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar o restante do código para o contêiner
@@ -16,7 +15,7 @@ COPY . .
 
 # Expôr a porta 5000 para rodar a aplicação Flask
 EXPOSE 5000
+WORKDIR /app/todo_project/
 
 # Comando para rodar a aplição Flask
-
-CMD ["Flask","run","--host=0.0.0.0"]
+CMD ["python", "run.py"]
