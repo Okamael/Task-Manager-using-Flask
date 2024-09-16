@@ -16,6 +16,8 @@ COPY . .
 # Expôr a porta 5000 para rodar a aplicação Flask
 EXPOSE 5000
 WORKDIR /app/todo_project/
+# Definir a variável de ambiente FLASK_APP
+ENV FLASK_APP=run.py
 
 # Comando para rodar a aplição Flask
-CMD ["python", "run.py"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]

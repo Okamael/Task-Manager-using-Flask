@@ -1,0 +1,9 @@
+version: '3'
+services:
+  flask-todo-app:
+    build: .
+    ports:
+      - "5000:5000"
+    container_name: flask-todo-app
+    environment:
+      FLASK_ENV: production
